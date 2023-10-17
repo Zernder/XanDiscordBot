@@ -1,0 +1,20 @@
+{
+    "slime": {
+        "health": 20,
+        "attack": 5,
+        "defense": 2,
+        "experience": 3
+    },
+    "goblin": {
+        "health": 30,
+        "attack": 8,
+        "defense": 4,
+        "experience": 5
+    },
+    "dragon": {
+        "health": 100,
+        "attack": 20,
+        "defense": 10,
+        "experience": 50
+    }
+}
