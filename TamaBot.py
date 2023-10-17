@@ -18,7 +18,7 @@ vocab_data = load_all_vocab_files() # Call the function to populate vocab_data
 Token = TamaToken #Discord Bot Token
 
 # Define the bot
-client = commands.Bot(command_prefix=".", intents=discord.Intents.all())
+client = commands.Bot(command_prefix="!", intents=discord.Intents.all())
 client.chatlog_dir = "logs/"
 
 # Inside your code, before the warning occurs, you can suppress it like this:
