@@ -98,7 +98,14 @@ async def on_message(message):
 
     await client.process_commands(message)  # Process any remaining commands
 
+
+# ======================[ MAIN ROUTINE ]======================
+
+
+
 # ======================[ COGS]======================
+
+
 
 @client.command()
 async def load(ctx, extension):
@@ -125,14 +132,14 @@ async def reload(ctx, extension):
     except Exception as e:
         await ctx.send(f'Could not reload {extension}. Error: {e}')
 
-# ======================[ MAIN ROUTINE ]======================
-
 async def load():
     for filename in os.listdir('./Cogs'):
         if filename.endswith('.py'):
             await client.load_extension(f'Cogs.{filename[:-3]}')
         else:
             print(f'Unable to load {filename[:-3]}')
+
+
 
 # =====================
 # Main Async Function
