@@ -1,20 +1,122 @@
 {
     "slime": {
-        "health": 20,
-        "attack": 5,
-        "defense": 2,
-        "experience": 3
+      "health": 20,
+      "attack": 5,
+      "defense": 2,
+      "experience": 3
+    },
+    "rat": {
+      "health": 15,
+      "attack": 4,
+      "defense": 1,
+      "experience": 2
+    },
+    "kobold": {
+      "health": 25,
+      "attack": 6,
+      "defense": 3,
+      "experience": 4
+    },
+    "imp": {
+      "health": 22,
+      "attack": 7,
+      "defense": 2,
+      "experience": 4
+    },
+    "shadow": {
+      "health": 30,
+      "attack": 9,
+      "defense": 5,
+      "experience": 5
     },
     "goblin": {
-        "health": 30,
-        "attack": 8,
-        "defense": 4,
-        "experience": 5
+      "health": 35,
+      "attack": 8,
+      "defense": 4,
+      "experience": 6
     },
-    "dragon": {
-        "health": 100,
-        "attack": 20,
-        "defense": 10,
-        "experience": 50
+    "hobgoblin": {
+      "health": 40,
+      "attack": 10,
+      "defense": 6,
+      "experience": 7
+    },
+    "skeleton": {
+      "health": 38,
+      "attack": 9,
+      "defense": 5,
+      "experience": 7
+    },
+    "orc": {
+      "health": 45,
+      "attack": 12,
+      "defense": 8,
+      "experience": 8
+    },
+    "wraith": {
+      "health": 50,
+      "attack": 15,
+      "defense": 10,
+      "experience": 10
+    },
+    "troll": {
+      "health": 60,
+      "attack": 16,
+      "defense": 12,
+      "experience": 12
+    },
+    "ogre": {
+      "health": 70,
+      "attack": 18,
+      "defense": 14,
+      "experience": 14
+    },
+    "banshee": {
+      "health": 65,
+      "attack": 17,
+      "defense": 13,
+      "experience": 13
+    },
+    "gorgon": {
+      "health": 75,
+      "attack": 19,
+      "defense": 15,
+      "experience": 15
+    },
+    "harpy": {
+      "health": 80,
+      "attack": 20,
+      "defense": 16,
+      "experience": 16
+    },
+    "minotaur": {
+      "health": 85,
+      "attack": 22,
+      "defense": 18,
+      "experience": 18
+    },
+    "wyvern": {
+      "health": 90,
+      "attack": 24,
+      "defense": 19,
+      "experience": 19
+    },
+    "manticore": {
+      "health": 95,
+      "attack": 25,
+      "defense": 20,
+      "experience": 20
+    },
+    "vampire": {
+      "health": 100,
+      "attack": 27,
+      "defense": 22,
+      "experience": 21
+    },
+    "specter": {
+      "health": 110,
+      "attack": 30,
+      "defense": 25,
+      "experience": 23
     }
-}
+  }

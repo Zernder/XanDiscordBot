@@ -1,4 +1,5 @@
 import warnings
+import sys
 import discord
 from discord.ext import commands
 import asyncio
@@ -20,6 +21,13 @@ Token = TamaToken #Discord Bot Token
 # Define the bot
 client = commands.Bot(command_prefix="!", intents=discord.Intents.all())
 client.chatlog_dir = "logs/"
+
+# Add a decorator to allow only specific user IDs to run the command
+def is_owner():
+    def predicate(ctx):
+        return ctx.author.id == 175421668850794506  # Replace with your Discord User ID
+    return commands.check(predicate)
+
 
 # Inside your code, before the warning occurs, you can suppress it like this:
 warnings.filterwarnings("ignore", category=UserWarning)
@@ -105,7 +113,13 @@ async def on_message(message):
 
 # ======================[ COGS]======================
 
-
+@client.command()
+@is_owner()  # Make sure only you can run this command
+async def kill(ctx):
+    await ctx.send("Shutting down...")
+    await client.logout()
+    await client.close()
+    sys.exit(0)  # Add this line to terminate the program
 
 @client.command()
 async def load(ctx, extension):
@@ -127,7 +141,9 @@ async def unload(ctx, extension):
 async def reload(ctx, extension):
     try:
         await client.unload_extension(f'Cogs.{extension}')
+        print("Cog Unloaded")
         await client.load_extension(f'Cogs.{extension}')
+        print("Cog Reloaded")
         await ctx.send(f'Reloaded {extension} successfully!')
     except Exception as e:
         await ctx.send(f'Could not reload {extension}. Error: {e}')
@@ -146,12 +162,10 @@ async def load():
 # =====================
 
 async def main():
-    async with client:
-        await load()
-        print("Tama Online!")
-        await asyncio.gather(
-            client.start(Token),
-        )
+    await load()
+    print("Tama Online!")
+    await client.start(Token)
+
 
 if __name__ == "__main__":
     asyncio.run(main())
