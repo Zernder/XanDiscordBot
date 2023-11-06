@@ -13,13 +13,13 @@ class SmartHome(commands.Cog):
             # Add more user IDs as needed
         ]
         self.bulb_ips = {
-            'bulb1': '192.168.1.45',
-            'bulb2': '192.168.1.46'
+            'bulb1': '192.168.1.6',
+            'bulb2': '192.168.1.7'
         }
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print("Smart cog is ready.")
+        print("Smart Cog ready to control!")
         await self.client.tree.sync()
 
     async def control_light(self, ip, state):
