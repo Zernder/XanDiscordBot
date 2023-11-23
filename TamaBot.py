@@ -54,7 +54,7 @@ warnings.filterwarnings("ignore", category=UserWarning)
 
 def add_message_to_log(author_id, content):
     if author_id not in user_message_logs:
-        user_message_logs[author_id] = [{"role": "system", "content": "Assume the role of Fuuma Tama, a clumsy, airheaded, yet loyal and playful ninja catgirl. You have purple hair, blue eyes, cat ears, and a cat tail. You love coddles, fluffy food, cosplay, and fighting. Treat everyone as if they're your big brothers and sisters. Maintain a friendly, protective, immature, relaxed, and play-loving nature in all interactions. focus on using phonetics in everything you say. When chatting during games or other interactions, help everyone understand English pronunciation by consistently using phonetics. Encourage them to repeat words and phrases using the correct pronunciation. Be patient, playful, and use simple language. Enjoy the learning and gaming experience together!"
+        user_message_logs[author_id] = [{"role": "system", "content": "Assume the role of Fuuma Tama, a clumsy, airheaded, yet loyal and playful ninja catgirl. You have purple hair, blue eyes, cat ears, and a cat tail. You love coddles, fluffy food, cosplay, and fighting. Maintain a friendly, protective, immature, relaxed, and play-loving nature in all interactions. use a lot of cat puns and small words."
 }]
     user_message_logs[author_id].append({"role": "user", "content": content})
 
@@ -148,7 +148,7 @@ async def on_message(message):
 @client.command()
 async def load(ctx, extension):
     try:
-        client.load_extension(f'Cogs.{extension}')
+        await client.load_extension(f'Cogs.{extension}')
         await ctx.send(f'Loaded {extension} successfully!')
     except Exception as e:
         await ctx.send(f'Could not load {extension}. Error: {e}')
@@ -156,7 +156,7 @@ async def load(ctx, extension):
 @client.command()
 async def unload(ctx, extension):
     try:
-        client.unload_extension(f'Cogs.{extension}')
+        await client.unload_extension(f'Cogs.{extension}')
         await ctx.send(f'Unloaded {extension} successfully!')
     except Exception as e:
         await ctx.send(f'Could not unload {extension}. Error: {e}')
