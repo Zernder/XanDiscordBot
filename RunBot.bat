@@ -1,4 +1,7 @@
 @echo off
+
+mkdir Music
+
 python -m venv XanDiscordBotEnv
 
 call XanDiscordBotEnv\Scripts\activate

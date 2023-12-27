@@ -10,7 +10,7 @@ class Music(commands.Cog):
         self.client = client
         self.music_queue = []
         self.current_audio_file = None
-        self.repeat = False  # Repeat is off by default
+        self.repeat = False
         self.last_interaction = None
 
     @commands.Cog.listener()

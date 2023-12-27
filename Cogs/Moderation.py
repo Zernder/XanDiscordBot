@@ -16,7 +16,7 @@ class Moderation(commands.Cog):
     # Static method to check for allowed users
     @staticmethod
     async def is_allowed_user(interaction: discord.Interaction):
-        allowed_users = [175421668850794506, 427689980241117184]  # User IDs
+        allowed_users = []  # User IDs
         return interaction.user.id in allowed_users
 
 
