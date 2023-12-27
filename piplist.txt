@@ -4,3 +4,4 @@ asyncio
 python-kasa
 torch
 requests
+youtube_dl

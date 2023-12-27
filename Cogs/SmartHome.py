@@ -9,7 +9,6 @@ class SmartHome(commands.Cog):
         # List of user IDs allowed to control the lights
         self.allowed_users = [
             175421668850794506,  # Replace with actual user IDs (without quotes since they are integers)
-            427689980241117184   # Replace with actual user IDs
             # Add more user IDs as needed
         ]
         self.bulb_ips = {

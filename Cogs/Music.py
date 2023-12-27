@@ -4,6 +4,7 @@ import asyncio
 import discord
 from discord import app_commands, FFmpegPCMAudio, PCMVolumeTransformer
 from discord.ext import commands
+import youtube_dl
 
 
 class Music(commands.Cog):
@@ -57,6 +58,12 @@ class Music(commands.Cog):
         self.music_queue.extend(audio_files)
         if not voice_client.is_playing():
             await self.play_next(interaction)
+        else:
+            # Check if the input is a YouTube link
+            if "youtube.com" in song_name or "youtu.be" in song_name:
+                await self.play_youtube_link(interaction, song_name, voice_client)
+            else:
+                await self.play_local_song(interaction, song_name, voice_client)
 
     async def play_next(self, interaction):
         if not self.music_queue and not self.repeat:

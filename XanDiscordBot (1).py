@@ -37,7 +37,7 @@ client.chatlog_dir = "logs/"
 async def on_ready():
     try:
         print("Message Triggered")
-        guild = discord.utils.get(client.guilds, name='The Purple Void of Chaos')
+        guild = discord.utils.get(client.guilds, name='The Dark Void of Gaming')
         if guild:
             print(f"Guild found: {guild.name}")
         else:
