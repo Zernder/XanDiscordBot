@@ -1,0 +1,5 @@
+discord.py
+discord.py[voice]
+asyncio
+python-kasa
+requests

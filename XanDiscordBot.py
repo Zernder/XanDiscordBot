@@ -1,17 +1,14 @@
 # TamaBot.py Script
 
 # ======================[ IMPORTS AND INITIALIZATIONS ]======================
-
+import os
 import warnings
+import tracemalloc
 import discord
-from discord.utils import get
 from discord.ext import commands
 import asyncio
-from kasa import SmartBulb
-import openai
-import tracemalloc
-import os
 from config import BotToken
+import requests
 
 
 
