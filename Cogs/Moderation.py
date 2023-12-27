@@ -20,7 +20,6 @@ class Moderation(commands.Cog):
         return interaction.user.id in allowed_users
 
 
-       
 
     @app_commands.command(name= "ping", description= "Ping the bot")
     async def ping(self, interaction: discord.Interaction):
@@ -32,7 +31,8 @@ class Moderation(commands.Cog):
     async def purge(self, interaction: discord.Interaction, count: int):
         try:
             await interaction.channel.purge(limit=count)
-            await interaction.response.send_message(f"{count} message(s) have been deleted")  # Use interaction.response to send the message
+            await interaction.response.send_message("messages have been deleted")
+            await interaction.response.defer()
             
         except Forbidden:
             await interaction.send("Missing permissions")

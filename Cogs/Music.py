@@ -1,16 +1,17 @@
-import asyncio
 import os
+import random
+import asyncio
 import discord
 from discord import app_commands, FFmpegPCMAudio, PCMVolumeTransformer
 from discord.ext import commands
-import random
+
 
 class Music(commands.Cog):
     def __init__(self, client):
         self.client = client
         self.music_queue = []
         self.current_audio_file = None
-        self.repeat = False  # Repeat is off by default
+        self.repeat = False
         self.last_interaction = None
 
     @commands.Cog.listener()
@@ -38,7 +39,7 @@ class Music(commands.Cog):
             voice_client = await channel.connect()
 
         audio_folder = "Songs"
-        audio_files = [file for file in os.listdir(audio_folder) if file.endswith((".mp3", ".m4a"))]
+        audio_files = [file for file in os.listdir(audio_folder) if file.endswith((".mp3", ".m4a", ".flac"))]
 
         if not audio_files:
             await interaction.followup.send("No audio files found in the Songs folder.")
