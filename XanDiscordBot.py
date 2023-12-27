@@ -89,19 +89,12 @@ async def on_message(message):
         if isinstance(message.channel, discord.DMChannel) or message.channel.name == 'tamachat':
 
             # Parameters for the POST request
-            payload = {
-                "model": "Tamaki",
-                "messages": [{"role": "user", "content": message.content}],
-                "stream": False,
-            }
-
+            payload = {"model": "Tamaki", "messages": [{"role": "user", "content": message.content}], "stream": False,}
             # Send the POST request
             response = requests.post(url, json=payload)
             response_data = response.json()
-            
             # Get the text response from the API call
             response_text = response_data.get("message", {}).get("content")
-
             # Send the text response
             await message.channel.send(response_text)
 
