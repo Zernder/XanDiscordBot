@@ -8,4 +8,4 @@ pip install -r piplist.txt
 
 clear
 
-nohup python3 XanDiscordBot.py > TamaLog.txt 2>&1 &
+nohup python3 Bot.py > TamaLog.txt 2>&1 &
