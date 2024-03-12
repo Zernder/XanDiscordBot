@@ -7,4 +7,4 @@ pip install -r piplist.txt
 
 call cls
 
-python XanDiscordBot.py
+python Bot.py
