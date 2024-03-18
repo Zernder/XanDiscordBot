@@ -34,10 +34,8 @@ class Moderation(commands.Cog):
             await interaction.channel.purge(limit=count)
             await interaction.response.send_message("messages have been deleted")
             await interaction.response.defer()
-            
         except Forbidden:
             await interaction.send("Missing permissions")
-
         except Exception as e:
             await interaction.send(f"Purge failed: {e}")
 
@@ -50,7 +48,6 @@ class Moderation(commands.Cog):
             member = interaction.user
         elif member is not None:
             member = member
-        
         if member is None:
             await interaction.send_message("Please mention a member to kick.")
         elif member == interaction.author:

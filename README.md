@@ -4,7 +4,7 @@ This Discord bot does basic commands for moderation and plays music added to a "
 
 Create a 'Music' folder, any .mp3 or .wav file you put in there will be playable with the music cog by doing /play.
 
-Open the config.py as a text file:
+Create config.py as a text file:
 
 BotToken = "Token Here" Replace Token Here with the discordbot token you got from the Discord dev portal.
 
