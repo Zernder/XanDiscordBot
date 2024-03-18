@@ -2,17 +2,18 @@ import discord
 from discord import Forbidden, app_commands
 from discord.ext import commands
 
+
 class Moderation(commands.Cog):
     def __init__(self, client):
         self.client = client
+
 
     @commands.Cog.listener()
     async def on_ready(self):
         print("Moderation Enforced")
         await self.client.tree.sync()
 
-        
-        
+
     # Static method to check for allowed users
     @staticmethod
     async def is_allowed_user(interaction: discord.Interaction):
@@ -20,10 +21,10 @@ class Moderation(commands.Cog):
         return interaction.user.id in allowed_users
 
 
-
     @app_commands.command(name= "ping", description= "Ping the bot")
     async def ping(self, interaction: discord.Interaction):
         await interaction.response.send_message(f"Pong! {round(self.client.latency * 1000)}ms")
+
 
     @app_commands.check(is_allowed_user)
     @app_commands.command(name="purge", description="Clear chat messages")
@@ -39,6 +40,7 @@ class Moderation(commands.Cog):
 
         except Exception as e:
             await interaction.send(f"Purge failed: {e}")
+
 
     @app_commands.check(is_allowed_user)
     @app_commands.command(name="kick", description="Kick Member")
@@ -62,6 +64,7 @@ class Moderation(commands.Cog):
             await interaction.send_message(f"{member.mention} has been kicked from the server {interaction.author.mention}.")
         await interaction.user.kick(discord.Member)
         await interaction.send_message(f"{interaction.member.mention} has been kicked from the server {interaction.author.mention}.")
+
 
 async def setup(client):
     await client.add_cog(Moderation(client))

@@ -7,14 +7,8 @@ class SmartHome(commands.Cog):
     def __init__(self, client):
         self.client = client
         # List of user IDs allowed to control the lights
-        self.allowed_users = [
-            175421668850794506,  # Replace with actual user IDs (without quotes since they are integers)
-            # Add more user IDs as needed
-        ]
-        self.bulb_ips = {
-            'bulb1': '192.168.1.6',
-            'bulb2': '192.168.1.7'
-        }
+        self.allowed_users = []  # Replace with actual user IDs (without quotes since they are integers)
+        self.bulb_ips = {} # Replace with actual Bulb IP's (without quotes since they are integers)
 
     @commands.Cog.listener()
     async def on_ready(self):
